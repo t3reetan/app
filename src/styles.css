@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+.mat-typography {
+    font-family: 'Abhaya Libre', serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 22px;
+}

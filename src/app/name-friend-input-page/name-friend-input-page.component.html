@@ -1,0 +1,21 @@
+<section class="container">
+  <p class="question">Who are you vibing with?</p>
+
+  <div class="form-container">
+    <form (submit)="onSubmit()">
+      <mat-form-field class="input" [style.width.px]=500 required appearance="standard">
+          <input #nameinput matInput [(ngModel)]="secondname" (ngModelChange)="change($event)" name="first"
+          placeholder="Your name here...">
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div *ngIf="submitButtonAppear">
+    <button mat-raised-button
+      color="primary"
+      class="submit-btn"
+      (click)="onSubmit()"
+    >Submit</button>
+  </div>
+</section>
+

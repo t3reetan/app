@@ -1,0 +1,31 @@
+#centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -100px;
+}
+
+.app-name {
+    font-size: 80px;
+}
+
+.app-des {
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 50px;
+    margin-left: -180px;
+}
+
+.login-btn {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 20px;
+    margin-top: 130px;
+    margin-left: -5px;
+    padding: 5px 20px;
+}
+
+.spotify-icon {
+    height: 30px;
+    margin-right: 10px;
+}
