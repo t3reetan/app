@@ -1,4 +1,4 @@
-.container {
+.contain {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +19,7 @@
 
 .input {
   font-family: 'Roboto Mono', monospace;
+  margin-bottom: 0;
 }
 
 .input-icon {
@@ -37,8 +38,8 @@
 }
 
 .track-square {
-  height: 150px;
-  width: 150px;
+  height: 90px;
+  width: 90px;
   border: 4px #c4c4c4 solid;
   margin: 5% 5%;
 }
@@ -55,6 +56,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 40%;
+  font-size: 14px;
   color: #605959;
   font-family: 'Roboto Mono', monospace;
 }
@@ -74,4 +76,53 @@
 
 ::ng-deep .mat-form-field-underline {
   display: none;
+}
+
+.dropdown {
+  width: 470px;
+  height: 240px;
+  background-color: #e4e4e4;
+  z-index: 1;
+  display: grid;
+}
+
+.layer1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.layer1:hover {
+  background: gray;
+  cursor: pointer;
+}
+.layer2:hover {
+  background: gray;
+  cursor: pointer;
+}
+.layer3:hover {
+  background: gray;
+  cursor: pointer;
+}
+
+.layer2{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.layer3{
+  grid-column: 1;
+  grid-row: 3;
+}
+.layer2{
+  background: #c4c4c4;
+}
+
+.ivyAlbum {
+  height: 90px;
+  width: 90px;
+  /* margin: 5% 5%; */
+}
+
+.ivyAlbum:hover {
+  opacity: 30%;
 }

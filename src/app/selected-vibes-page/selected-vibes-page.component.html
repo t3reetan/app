@@ -1,1 +1,48 @@
-<p>selected-vibes-page works!</p>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="title">
+      Selected Vibes
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-sm-6 centralise">
+      <app-selected-track [track]="selectedTracks[0]"></app-selected-track>
+    </div>
+    <div class="col-sm-3 centralise">
+      <app-selected-track [track]="selectedTracks[1]"></app-selected-track>
+    </div>
+    <div class="col-1"></div>
+
+
+  </div>
+  <div class="row" style="margin-top: 2%;">
+    <div class="col-1"></div>
+    <div class="col-sm-6 centralise">
+      <app-selected-track [track]="selectedTracks[2]"></app-selected-track>
+    </div>
+    <div class="col-sm-3 centralise">
+      <app-selected-track [track]="selectedTracks[3]"></app-selected-track>
+    </div>
+    <div class="col-1"></div>
+  </div>
+
+  <div class="row btn-row">
+    <div class="col-3"></div>
+    <div class="col-3 btn-div">
+      <button mat-raised-button
+        color="primary"
+        class="submit-btn"
+        (click)="onSelectAgain()"
+      >Select Again</button>
+    </div>
+    <div class="col-3 btn-div">
+      <button mat-raised-button
+        color="primary"
+        class="submit-btn"
+        (click)="onContinue()"
+      >Continue</button>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

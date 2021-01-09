@@ -15,7 +15,9 @@ import { NameFriendInputPageComponent } from './name-friend-input-page/name-frie
 import { AliceVibePageComponent } from './alice-vibe-page/alice-vibe-page.component';
 import { BobVibePageComponent } from './bob-vibe-page/bob-vibe-page.component';
 import { SelectedVibesPageComponent } from './selected-vibes-page/selected-vibes-page.component';
+import { SelectedTrackComponent } from './selected-vibes-page/selected-track/selected-track.component';
 import { ResultPageComponent } from './result-page/result-page.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ResultPageComponent } from './result-page/result-page.component';
     AliceVibePageComponent,
     BobVibePageComponent,
     SelectedVibesPageComponent,
-    ResultPageComponent
+    SelectedTrackComponent,
+    ResultPageComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    font-size: 50px;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 50px;
+}
+
+.play-btn {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 20px;
+    margin-top: 130px;
+    margin-left: -5px;
+    padding: 5px 20px;
+}
+
+.restart-button {
+    font-size: 30px;
+    margin-top: 200px;
+}
+
+.play-icon, .restart-icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
+a:visited {color:#000000;}

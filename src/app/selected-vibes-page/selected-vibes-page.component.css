@@ -1,0 +1,32 @@
+.container {
+  margin-top: 8%;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 8%;
+}
+
+.centralise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-div {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 20px;
+  padding: 5px 50px;
+}
+
+.btn-row {
+  margin-top: 5%;
+}
+

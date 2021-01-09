@@ -1,4 +1,4 @@
-<section class="container">
+<section class="contain">
   <div class="title">
     {{ firstname }}'s Vibe
   </div>
@@ -7,23 +7,86 @@
     <form>
       <mat-form-field class="input" [style.width.px]=500 appearance="standard">
         <fa-icon [icon]="faSearch" class="input-icon"></fa-icon>
-        <input class="input-field" matInput placeholder="Choose tracks" name="first">
+        <input class="input-field" [(ngModel)]="trackNameSearched" (ngModelChange)="change($event)" matInput placeholder="Choose tracks" name="first">
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='i'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[0]"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[1]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[2]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='iv'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[0]" (click)="ivyClick()"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[4]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[6]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='e'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[8]" (click)="ivyClick()"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[7]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[9]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='ea'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[8]" (click)="ivyClick()"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[7]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[11]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='easy'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[8]" (click)="ivyClick()"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track (click)="easyClick()" [track]="aliceTracks[7]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="aliceTracks[13]"></app-selected-track>
+          </div>
+        </div>
+
+
       </mat-form-field>
     </form>
   </div>
+
+
 </section>
 
 
 <div class="row">
-  <div class="track-square">
+  <div class="track-square" *ngIf="!setIvy">
     <p class="track-label">TRACK 1</p>
   </div>
-  <div class="track-square">
+  <div class="track-square" *ngIf="setIvy"><img class="ivyAlbum" src="{{ aliceTracks[0].imagePath }}"></div>
+  <div class="track-square" *ngIf="!setEasy">
     <p class="track-label">TRACK 2</p>
   </div>
-  <div class="track-square">
-    <p class="track-label">TRACK 3</p>
-  </div>
+  <div  class="track-square" *ngIf="setEasy"><img class="ivyAlbum" src="{{ aliceTracks[7].imagePath }}"></div>
+
 </div>
 <div class="btn-div">
   <button mat-raised-button

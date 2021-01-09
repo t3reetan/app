@@ -1,30 +1,91 @@
-<section class="container">
+<section class="contain">
   <div class="title">
     {{ secondname }}'s Vibe
   </div>
 
   <div class="form-container">
     <form>
-      <mat-form-field class="input" appearance="standard" [style.width.px]=500>
+      <mat-form-field class="input" [style.width.px]=500 appearance="standard">
         <fa-icon [icon]="faSearch" class="input-icon"></fa-icon>
-        <input class="input-field" matInput placeholder="Choose tracks" name="first">
+        <input class="input-field" [(ngModel)]="trackNameSearched" (ngModelChange)="change($event)" matInput placeholder="Choose tracks" name="first">
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='n'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[0]"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[1]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[2]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='num'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[0]" (click)="numbClick()"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[4]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[6]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='t'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[9]"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[10]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[11]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='th'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[10]"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[13]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[15]"></app-selected-track>
+          </div>
+        </div>
+
+        <div class="container dropdown" *ngIf="dropdown" [hidden]="type!='thank'">
+          <div class="layer1" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[16]"></app-selected-track>
+          </div>
+          <div class="layer2" *ngIf="dropdown">
+            <app-selected-track (click)="thankuClick()" [track]="bobTracks[13]"></app-selected-track>
+          </div>
+          <div class="layer3" *ngIf="dropdown">
+            <app-selected-track [track]="bobTracks[12]"></app-selected-track>
+          </div>
+        </div>
+
       </mat-form-field>
     </form>
   </div>
+
+
 </section>
-
-
 <div class="row">
-  <div class="track-square">
+  <div class="track-square" *ngIf="!setNumb">
     <p class="track-label">TRACK 1</p>
   </div>
-  <div class="track-square">
+  <div class="track-square" *ngIf="setNumb"><img class="ivyAlbum" src="{{ bobTracks[0].imagePath }}"></div>
+  <div class="track-square" *ngIf="!setThanku">
     <p class="track-label">TRACK 2</p>
   </div>
-  <div class="track-square">
-    <p class="track-label">TRACK 3</p>
-  </div>
+  <div class="track-square" *ngIf="setThanku"><img class="ivyAlbum" src="{{ bobTracks[13].imagePath }}"></div>
+
 </div>
+
 <div class="btn-div">
   <button mat-raised-button
     color="primary"
